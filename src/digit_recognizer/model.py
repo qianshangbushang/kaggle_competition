@@ -8,7 +8,7 @@ import torchvision
 
 
 class model(nn.Module):
-    def __init__(self, modelname="resnet50", pretrained="imagenet"):
+    def __init__(self, modelname = "resnet50", pretrained = None):
         super(model, self).__init__()
         if pretrained == "imagenet":
             self.model = torchvision.models.__dict__[modelname](pretrained=True)
