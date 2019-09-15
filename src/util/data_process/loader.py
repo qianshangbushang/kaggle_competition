@@ -49,13 +49,15 @@ class DigitalDatasetFromCSV(Dataset):
     def __len__(self):
         return len(self.data)
 
-    def change_train(self):
+    def change_train(self, transforms = None):
         self.data = self.x_train
         self.labels = self.y_train
+        self.transforms = transforms
 
-    def change_test(self):
+    def change_val(self, transforms = None):
         self.data = self.x_val
         self.labels = self.y_val
+        self.transforms = transforms
 
 
 if __name__ == "__main__":
